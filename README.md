@@ -9,6 +9,7 @@ Gympoint is an application developed for gym management.
 - NodeJS using Express
 - Javascript ES6
 - Postgre SQL
+- JWT (JSON Web Token)
 
 # Tools
 - Visual Studio Code (IDE)
