@@ -3,8 +3,6 @@ import Student from '../models/Student';
 
 class StudentController {
   async store(req, res) {
-    const { name, email, age, weigth, height } = await Student.create(req.body);
-
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       email: Yup.string()
@@ -33,6 +31,8 @@ class StudentController {
     if (studentExists) {
       return res.status(400).json({ error: 'Student already exists.' });
     }
+
+    const { name, email, age, weigth, height } = await Student.create(req.body);
 
     return res.json({
       name,
