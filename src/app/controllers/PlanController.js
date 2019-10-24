@@ -54,6 +54,9 @@ class PlanController {
 
     const { title } = req.body;
 
+    /**
+     * A plan title must be unique.
+     */
     if (title !== plan.title) {
       const planExists = await Plan.findOne({ where: { title } });
 
