@@ -10,6 +10,7 @@ import RegistrationController from './app/controllers/RegistrationController';
 const routes = new Router();
 
 routes.post('/students', StudentController.store);
+routes.get('/students/', StudentController.index);
 routes.put('/students/:id', StudentController.update);
 
 routes.post('/plans', PlanController.store);
@@ -19,6 +20,8 @@ routes.delete('/plans/:id', PlanController.delete);
 
 routes.post('/registrations', RegistrationController.store);
 routes.get('/registrations', RegistrationController.index);
+routes.put('/registrations/:id', RegistrationController.update);
+routes.delete('/registrations/:id', RegistrationController.delete);
 
 routes.post('/sessions', SessionController.store);
 
