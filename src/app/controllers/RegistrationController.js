@@ -79,13 +79,17 @@ class RegistrationController {
     const studentExists = await Student.findByPk(student_id);
 
     if (!studentExists) {
-      return res.status(400).json('The provided student does not exist.');
+      return res
+        .status(400)
+        .json({ error: 'The provided student does not exist.' });
     }
 
     const planExists = await Plan.findByPk(plan_id);
 
     if (!planExists) {
-      return res.status(400).json({ error: 'Plan does not exist.' });
+      return res
+        .status(400)
+        .json({ error: 'The provided plan does not exist.' });
     }
 
     const hourStart = startOfHour(parseISO(start_date));
