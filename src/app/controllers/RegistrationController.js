@@ -47,8 +47,8 @@ class RegistrationController {
     );
 
     const registration = await Registration.create({
-      studentExists,
-      planExists,
+      student_id,
+      plan_id,
       start_date,
       end_date,
       price,
