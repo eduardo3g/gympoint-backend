@@ -19,7 +19,7 @@ class RegistrationMail {
       template: 'registration',
       context: {
         student: studentExists.name,
-        plan: planExists.name,
+        plan: planExists.title,
         start_date: format(
           parseISO(start_date),
           "'dia' dd 'de' MMMM 'de' yyyy', às' H:mm'h'",
