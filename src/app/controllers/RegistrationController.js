@@ -4,6 +4,9 @@ import Registration from '../models/Registration';
 import Student from '../models/Student';
 import Plan from '../models/Plan';
 
+import Queue from '../../lib/Queue';
+import RegistrationMail from '../jobs/RegistrationMail';
+
 class RegistrationController {
   async index(req, res) {
     const registrations = await Registration.findAll();
@@ -44,8 +47,16 @@ class RegistrationController {
     );
 
     const registration = await Registration.create({
-      student_id,
-      plan_id,
+      studentExists,
+      planExists,
+      start_date,
+      end_date,
+      price,
+    });
+
+    await Queue.add(RegistrationMail.key, {
+      studentExists,
+      planExists,
       start_date,
       end_date,
       price,
