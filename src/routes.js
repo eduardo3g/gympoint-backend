@@ -6,12 +6,16 @@ import authMiddleware from './app/middlewares/auth';
 import StudentController from './app/controllers/StudentController';
 import PlanController from './app/controllers/PlanController';
 import RegistrationController from './app/controllers/RegistrationController';
+import CheckinController from './app/controllers/CheckinController';
 
 const routes = new Router();
 
 routes.post('/students', StudentController.store);
 routes.get('/students/', StudentController.index);
 routes.put('/students/:id', StudentController.update);
+
+routes.post('/students/:id/checkins', CheckinController.store);
+routes.get('/students/:id/checkins', CheckinController.index);
 
 routes.post('/plans', PlanController.store);
 routes.get('/plans', PlanController.index);
