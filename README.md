@@ -1,5 +1,3 @@
-<p align="center"><img src="https://github.com/Rocketseat/bootcamp-gostack-desafio-02/blob/master/.github/logo.png"></p>
-
 # GYMPOINT
 
 Gympoint is an application developed for gym management.
